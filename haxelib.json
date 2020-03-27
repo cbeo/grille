@@ -1,0 +1,12 @@
+{
+    "name": "grille",
+    "url" : "https://github.com/cbeo/grille/",
+    "license": "MIT",
+    "tags":  ["grid"],
+    "description": "Data structures and utilities for working with grids.",
+    "version": "0.0.1",
+    "classPath": "src",
+    "releasenote": "alpha",
+    "contributors": ["Colin Okay"],
+    "dependencies": { "lambdaplus" : ""},
+}
