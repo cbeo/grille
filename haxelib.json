@@ -8,5 +8,5 @@
     "classPath": "src",
     "releasenote": "alpha",
     "contributors": ["Colin Okay"],
-    "dependencies": { "lambdaplus" : ""},
+    "dependencies": { "lambdaplus" : ""}
 }
