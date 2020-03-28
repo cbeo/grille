@@ -13,4 +13,8 @@ class GridUtil {
     public static function filter<T> (g:Grid<T>, pred:GridCell<T> -> Bool) : Array<GridCell<T>> {
 	return [for (t in iterator(g)) if (pred( t )) t];
     }
+
+    public static function line<T> (g:Grid<T>, x1, y1, x2, y2) : GridLineIterate<T> {
+	return new GridLineIterate(g, x1, y1, x2, y2);
+    }
 }
