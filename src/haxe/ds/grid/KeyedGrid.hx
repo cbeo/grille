@@ -14,7 +14,10 @@ class KeyedGrid<T> extends GridBase<T> implements Grid<T> {
 
     public function set(x:Int,y:Int,t:T) {
 	var index = keyed.indexOf(t);
-	if (index < 0) throw 'Bad set input: $t is not a keyed value';
+	if (index < 0) {
+	    index = keyed.length;
+	    keyed.push(t);
+	}
 	grid.set(x,y,index);
     }
 
