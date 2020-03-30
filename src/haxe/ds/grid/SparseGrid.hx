@@ -32,7 +32,7 @@ class SparseGrid<T> extends GridBase<T> implements Grid<T> {
     }
 
     public function sparseIterator():Iterator<{x:Int,y:Int,value:T}> {
-	return cells.iterator()
+	return cells.iterator();
     }
 
     public function new (width:Int,height:Int) {
