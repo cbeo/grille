@@ -2,6 +2,7 @@ package haxe.ds.grid;
 
 import haxe.ds.Maybe;
 
+@:using(haxe.ds.grid.GridUtil)
 interface Grid<T> {
 
     public var width(default,null):Int;
