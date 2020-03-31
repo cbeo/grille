@@ -26,10 +26,6 @@ class GridMap<T> extends GridBase<T> implements Grid<T> {
 	cells.set( indexOf(x,y), val);
     }
 
-    public function drop(x:Int,y:Int) {
-	set(x,y,null);
-    }
-
     public function new (w,h) {
 	super(w,h);
 	cells = new Vector (w * h);

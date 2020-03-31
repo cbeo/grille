@@ -18,10 +18,6 @@ class SparseGrid<T> extends GridBase<T> implements Grid<T> {
 	return if (found != null) Just( found.value ) else Nothing;
     }
 
-    public function drop(x:Int,y:Int) {
-	cells = cells.filter( cell -> !(cell.x == x && cell.y == y) );
-    }
-
     public function set(x:Int,y:Int,value:T) {
 	var found = cell(x,y);
 	if (found != null) {
