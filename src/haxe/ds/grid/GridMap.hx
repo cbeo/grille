@@ -7,17 +7,12 @@ class GridMap<T> extends GridBase<T> implements Grid<T> {
 
     var cells:Vector<T>;
 
-    function checkCoordinate(x,y) {
-	if (x < 0 || y < 0 || x >= gridWidth || y >= gridHeight)
-	    throw 'Bad grid reference x,y = $x, $y';
-    }
-
     function indexOf(x,y) {
-	checkCoordinate(x,y);
 	return y * gridWidth + x;
     }
 
     public function get(x:Int,y:Int):Maybe<T> {
+	if (!onGrid( x, y)) return Nothing;
 	var gotten =  cells.get( indexOf(x,y) );
 	return if (gotten == null) Nothing else Just(gotten);
     }
