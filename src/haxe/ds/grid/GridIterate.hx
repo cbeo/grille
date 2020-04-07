@@ -9,12 +9,16 @@ class GridIterate<T> {
     var grid:Grid<T>;
     public var x(default,null):Int;
     public var y(default,null):Int;
+    var startX:Int;
+    var startY:Int;
     var endX:Int;
     var endY:Int;
     var pt:GridCell<T>;
 
     public inline function new (grid,x,y,ex,ey) {
 	this.grid = grid;
+        this.startX = x;
+        this.startY = y;
 	this.x = x;
 	this.y = y;
 	this.endX = ex;
@@ -30,7 +34,7 @@ class GridIterate<T> {
 	pt.x = x;
 	pt.y = y;
 	if (x >= endX) {
-	    x = 0;
+	    x = startX;
 	    y += 1;
 	} else {
 	    x += 1;

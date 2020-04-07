@@ -8,7 +8,7 @@ class SparseGrid<T> extends GridBase<T> implements Grid<T> {
 
     var cells:Array<{x:Int,y:Int,value:T}> = [];
 
-    function cell(x:Int,y:Int) : {x:Int,y:Int,value:T} {
+    public function cell(x:Int,y:Int) : {x:Int,y:Int,value:T} {
 	if (!onGrid(x,y)) 'Bad grid reference x,y = $x, $y';
 	return cells.find(pt -> pt.x == x && pt.y == y);
     }
@@ -27,6 +27,7 @@ class SparseGrid<T> extends GridBase<T> implements Grid<T> {
 	}
     }
 
+    
     public function sparseIterator():Iterator<{x:Int,y:Int,value:T}> {
 	return cells.iterator();
     }
