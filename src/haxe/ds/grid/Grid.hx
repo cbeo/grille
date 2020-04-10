@@ -11,5 +11,6 @@ interface Grid<T> {
     public function onGrid(x:Int,y:Int):Bool;
     public function get(x:Int,y:Int):Maybe<T>;
     public function set(x:Int,y:Int,t:T):Void;
+    public function remove(x:Int,y:Int):Void;
 }
 

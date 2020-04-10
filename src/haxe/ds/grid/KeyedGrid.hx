@@ -21,6 +21,10 @@ class KeyedGrid<T> extends GridBase<T> implements Grid<T> {
 	grid.set(x,y,index);
     }
 
+    public function remove(x:Int,y:Int) {
+        grid.remove(x,y);
+    }
+    
     public function addKeyed(t:T) {
 	keyed.push(t);
     }

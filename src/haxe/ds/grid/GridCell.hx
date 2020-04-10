@@ -18,6 +18,16 @@ class GridCell<T> {
 	return v;
     }
 
+    public var safeValue(get,never):Maybe<T>;
+
+    function get_safeValue():Maybe<T> {
+        return grid.get(x,y);
+    }
+    
+    public function remove () {
+        grid.remove(x,y);
+    }
+    
     public function neighbors(?manhattan = false):Array<GridCell<T>> {
 	var ns = [];
 	var pushCell = (cell) -> ns.push( cell );

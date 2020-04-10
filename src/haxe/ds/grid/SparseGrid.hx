@@ -27,6 +27,9 @@ class SparseGrid<T> extends GridBase<T> implements Grid<T> {
 	}
     }
 
+    public function remove(x,y) {
+        cells = [for (c in cells) if (c.x != x || c.y != y) c];
+    }
     
     public function sparseIterator():Iterator<{x:Int,y:Int,value:T}> {
 	return cells.iterator();
