@@ -76,8 +76,12 @@ class GridCell<T> {
 	return relativeBy(-1,1);
     }
     
+    // public function relativeBy(dx,dy):Maybe<GridCell<T>> {
+    //     return if ( grid.onGrid(x+dx,y+dy) ) Just(new GridCell(grid,x+dx,y+dy)) else Nothing;
+    // }
+
     public function relativeBy(dx,dy):Maybe<GridCell<T>> {
-	return if ( grid.onGrid(x+dx,y+dy) ) Just(new GridCell(grid,x+dx,y+dy)) else Nothing;
+        return if (grid.get(x+dx, y+dy).isJust()) Just(new GridCell(grid, x+dx, y+dy)) else Nothing;
     }
 
     public function new(grid,x,y) {
