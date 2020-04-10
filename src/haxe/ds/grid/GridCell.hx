@@ -43,6 +43,15 @@ class GridCell<T> {
 	return ns;
     }
 
+    public function neighborBlock():Array<Maybe<T>> {
+        var f = (cell:GridCell<T>) -> cell.safeValue;
+        return [
+            aboveLeft.andThen( f ), above.andThen( f ), aboveRight.andThen( f ),
+            left.andThen( f ), safeValue, right.andThen( f ),
+            belowLeft.andThen( f ), below.andThen( f ), belowRight.andThen( f )
+        ];
+    }
+
     public var above(get,never):Maybe<GridCell<T>>;
     function get_above() {
 	return relativeBy(0,-1);
